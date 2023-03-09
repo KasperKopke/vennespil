@@ -1,10 +1,23 @@
+/*
+* her har vi gjort at venndespillet er centrert og det er opstillet i et grid
+*og vi har stylet billdene til at have en box-shadow og en border og en hover efekt 
+* Så har vi en class med en toggle efekt som gør at den fjerner billdet når classen er aktiv
+*/
+
 * {
+  /*
+  *det er en css start som nullstiller din margin,padding og boxene 
+  *så de er justere bare indei css 
+  */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
+  /*
+* inde i bodyen har vi justert alt indhold som er visuelt i midden
+*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +25,11 @@ body {
   background-color: #87cefa;
 }
 .rundomalle {
+  /*
+  * vi har lavet et parent element som der siger til alle child elementerne at de skal stå ved siden af hindanden
+  * og har den sammme width, gap og postition på skærmen vi har også lavet den flex-wrap som gær at 
+  * då de rammer body´ens max-width går de under hindanden istedet for at blive mindre
+  */
   display: flex;
   width: 60%;
   justify-content: center;
@@ -21,10 +39,20 @@ body {
 }
 
 .box {
+  /*
+  * vi har lavet alle bokse med classen .box postition relative som gør så billedet der skal skjule billedet inde i boksen kan bære over 
+  * uden nogen problemer med at skubbe hinadnen 
+  */
+
   position: relative;
 }
 
 .rundomalle img {
+  /* 
+* vi har kaldt classen .rundomalle og inde i den snakker vi kun til billedet hvor vi har lavet 
+* en border, box-shadow, curser pointer og en transtition som giver det et pænt layout
+*/
+
   border: 5px white solid;
   border-radius: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -34,12 +62,21 @@ body {
 }
 
 .rundomalle img:hover {
+  /*
+*den her laver en hvid hover effekt under billedet når brugeren holder musen henover bileldet 
+*/
+
   box-shadow: rgba(255, 255, 255, 0.658) 0px 6px 12px -2px,
     rgba(255, 255, 255, 0.541) 0px 3px 7px -3px;
   transition: all 0.1s ease-in-out;
 }
 
 .toggleImg {
+  /*
+* toggleimg er billedet der skjuler det matchene billede vi har tilføjet 
+* et baggrunds billede som er foran det andet billede så det fungere lidt som et låg
+*/
+
   border: 5px white solid;
   border-radius: 5px;
   background-image: url("/assets/logo.png");
@@ -53,11 +90,40 @@ body {
 }
 
 .active .toggleImg {
+  /*
+* den her class element har 2 elementer hvor den siger "hvis toggleimg bliver aktiv tilføj classen aktiv" som vi har gjort her 
+* og det den gør er så simpelt at den displayer none hvilket gør at man ikke kan se det billedet foran det matchene billede visuelt på skærmen
+*/
+
   display: none;
 }
 
 .toggleImg:hover {
+  /*
+  *hvid hover effekt igen når du tager musen henover billedet
+  */
+
   box-shadow: rgba(255, 255, 255, 0.658) 0px 6px 12px -2px,
     rgba(255, 255, 255, 0.541) 0px 3px 7px -3px;
   transition: all 0.1s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border-radius: 3px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding: 10px 30px;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  position: fixed;
+  z-index: 999;
+  top: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  box-shadow: rgba(255, 255, 255, 0.658) 0px 6px 12px -2px,
+    rgba(255, 255, 255, 0.541) 0px 3px 7px -3px;
 }

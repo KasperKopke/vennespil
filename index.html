@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
+    <!--vi har lavet 12 div´er som er brugt som boxe hvor der er et billede inde i 
+    under den er der en tom div med en class der der hedder toggleimg der
+  gør at når tilføjer classen active så fjerner den billedet foran det andet billede 
+som fremviser et vendespil hvor vi skal matche billeder-->
+    <a href="#">Reset</a>
     <div class="rundomalle">
       <div class="box">
         <img src="https://picsum.photos/seed/picsum_1/250/250  " alt="" />
@@ -20,12 +25,17 @@
       </div>
 
       <div class="box">
+        <!--box til en af vores billeder-->
         <img
           src="https://picsum.photos/seed/picsum_6/250/250
       "
           alt=""
         />
+        <!-- billedet som vi skal matche med-->
         <div class="toggleImg"></div>
+        <!--tom kasse med en class som gør at
+        når den for en klasse der hedder active skal den vise et billede henover
+      det andet billede for at skjule det billede vi skal matche-->
       </div>
 
       <div class="box">
